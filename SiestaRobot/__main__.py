@@ -211,20 +211,15 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "animechat_button"), callback_data="siesta_"),
-                        ],
-                        [
-                            InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "updates_button"), url="https://t.me/boa_updates"),
-                        ],
-                        [
-                            InlineKeyboardButton(text=gs(chat.id, "support_button"), url="https://t.me/BoaHancock_Support"),
-                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="https://t.me/zero-hisoka"),
-                        ],
-                        [
+                            InlineKeyboardButton(text=gs(chat.id, "animechat_button"), url="https://t.me/ahjin_chat"),
                             InlineKeyboardButton(
-                                text=gs(chat.id, "xd_button"), url="t.me/BoaHancock_Robot?startgroup=new"),
-                        ]
+                                text=gs(chat.id, "xd_button"), url="t.me/akiratodobot?startgroup=new"),
+
+                        ],
+                        [
+                            InlineKeyboardButton(text=gs(chat.id, "support_button"), url="t.me/akiratodosupport"),
+                        ],
+                           
 
                         
                     ]
@@ -241,9 +236,9 @@ reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "𝐌𝐲 𝐃𝐚𝐫𝐥𝐢𝐧𝐠 💕💖", url=f"https://t.me//zero-hisoka"),
+                                "O W N E R", url=f"https://t.me//zero_hisoka"),
                             InlineKeyboardButton(
-                                "•𝙰𝙷𝙹𝙸𝙽•", url=f"https://t.me/ahjinwoo_network")
+                                "•𝙰𝙷𝙹𝙸𝙽•", url=f"https://t.me/ahjin_network")
                 
                         ],
                     ]
