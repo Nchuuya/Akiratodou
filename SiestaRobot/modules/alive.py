@@ -18,10 +18,10 @@ from pyrogram import __version__ as pyro
 
 edit_time = 5
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/f1b6b36af5b4dc85e67e3.jpg"
-file2 = "https://telegra.ph/file/6553f53687ed05f74027e.jpg"
-file3 = "https://telegra.ph/file/41bb289e29fd23df314cb.jpg"
-file4 = "https://telegra.ph/file/644c04a3c809a83d73df3.jpg"
+file1 = "https://telegra.ph/file/2371af37367b3454e9cdf.jpg"
+file2 = "https://telegra.ph/file/b3d283f1040d5a2ce8aac.jpg"
+file3 = "https://telegra.ph/file/d9986b3e88fdadc021279.jpg"
+file4 = "https://telegra.ph/file/262cf5bb9780cbb96afb7.jpg"
 """ =======================CONSTANTS====================== """
 
 START_TIME = datetime.utcnow()
@@ -57,7 +57,7 @@ async def hmm(yes):
     Miku += f"♡ **Python Telegram Bot Version** ~♪ `{telegram.__version__}`\n\n"
     Miku += f"♡ **Pyrogram Version** ~♪ `{pyro}`\n\n"
     Miku += f"♡ **My Master** ~♪ [Kazutora Hanemiya ♡](https://t.me/zero_hisoka)\n\n"
-    Miku += f"Thanks For Adding Me In {yes.chat.title}"
+    Miku += f"Thanks For Adding Me ♡"
     BUTTON = [[Button.url("Support Chat", "https://t.me/BoaHancock_Support"), Button.url("Updates Channel", "https://t.me/boa_updates")]]
     on = await borg.send_file(yes.chat_id, file=file2,caption=Miku, buttons=BUTTON)
 
@@ -86,4 +86,4 @@ async def hmm(yes):
 async def repo(event):
     Miku = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}), Click The Button Below To Get My Yamato Repo**\n\n"
     BUTTON = [[Button.url("[► Support ◄]", "https://t.me/BoaHancock_Support"), Button.url("[► Repo ◄]", "https://github.com/Nchuuya/Yamato")]]
-    await borg.send_file(event.chat_id, file="https://telegra.ph/file/41bb289e29fd23df314cb.jpg", caption=Miku, buttons=BUTTON)
+    await borg.send_file(event.chat_id, file="https://telegra.ph/file/262cf5bb9780cbb96afb7.jpg", caption=Miku, buttons=BUTTON)

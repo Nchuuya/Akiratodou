@@ -1,90 +1,92 @@
-"""
-Telegraph module to upload text and image/video to telegra.ph via zerotwobot
-Author/Written - @kishoreee
-Copy with credits else face legal problems.
-"""
-
+from SiestaRobot.events import register
+from SiestaRobot import telethn as tbot
+TMP_DOWNLOAD_DIRECTORY = "./"
+from telethon import events, Button, custom
 import os
-from datetime import datetime
-
 from PIL import Image
-from telegraph import Telegraph, exceptions, upload
-
-from SiestaRobot import TEMP_DOWNLOAD_LOC, dispatcher
-from telegram import Update
-from telegram.ext import CallbackContext, CommandHandler
-
-telegrph = Telegraph()
-
-r = telegrph.create_account(short_name="telegraph")
+from datetime import datetime
+from telegraph import Telegraph, upload_file, exceptions
+miku = "Akira"
+telegraph = Telegraph()
+r = telegraph.create_account(short_name=miku)
 auth_url = r["auth_url"]
 
-def telegraph(update: Update, context: CallbackContext):
-    message = update.effective_message
-    chat = update.effective_chat
-    user = update.effective_user
-    args = context.args
-    bot = context.bot
 
-
-    if not args:
-        message.reply_text("Sorry invalid option \n Ex: /telegraph m - for media \n /telegraph t - for text")
-        return 
-
-    msg = message.reply_text("<code>Started telegraph module...</code>", parse_mode="html")        
-
-    if not os.path.isdir(TEMP_DOWNLOAD_LOC):
-        os.mkdir(TEMP_DOWNLOAD_LOC)
-
-
-    if len(args) >= 1:
-        if message.reply_to_message:
-            start = datetime.now()
-            reply_msg = message.reply_to_message
-
-            if args[0] == "m":
-                if reply_msg.photo:
-                    file = reply_msg.photo[-1].get_file()
-                    file_name = "image"
-                elif reply_msg.video:
-                    file = reply_msg.video.get_file()
-                    file_name = reply_msg.video.file_name
-
-                downloaded_file = file.download(TEMP_DOWNLOAD_LOC + "/" + file_name)
-                msg.edit_text("<code>Downloaded image/video</code>", parse_mode="html")
-
-                try:
-                    media_url = upload.upload_file(downloaded_file)
-                except exceptions.TelegraphException as exc:
-                    msg.edit_text(f"ERROR: {exc}")
-                else:
-                    msg.edit_text(
-                        f"Succesfully uploaded to [telegra.ph](https://telegra.ph{media_url[0]})",
-                        parse_mode="markdown",
-                    )
-            elif args[0] == "t":
-                if user.last_name:
-                    page_title = user.first_name + " " + user.last_name
-                else:
-                    page_title = user.first_name
-
-                text = reply_msg.text
-                text = text.replace("\n", "<br>")
-
-                response = telegrph.create_page(
-                    page_title, html_content=text
+@register(pattern="^/t(m|xt) ?(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    optional_title = event.pattern_match.group(2)
+    if event.reply_to_msg_id:
+        start = datetime.now()
+        r_message = await event.get_reply_message()
+        input_str = event.pattern_match.group(1)
+        if input_str == "m":
+            downloaded_file_name = await tbot.download_media(
+                r_message,
+                TMP_DOWNLOAD_DIRECTORY
+            )
+            end = datetime.now()
+            ms = (end - start).seconds
+            h = await event.reply("Downloaded {} in {} seconds.".format(downloaded_file_name, ms))
+            if downloaded_file_name.endswith((".webp")):
+                resize_image(downloaded_file_name)
+            try:
+                start = datetime.now()
+                media_urls = upload_file(downloaded_file_name)
+            except exceptions.TelegraphException as exc:
+                await h.edit("ERROR: " + str(exc))
+                os.remove(downloaded_file_name)
+            else:
+                end = datetime.now()
+                BUTTON = [[Button.url("Telegraph", f"https://telegra.ph/{media_urls[0]}")]]
+                ms_two = (end - start).seconds
+                os.remove(downloaded_file_name)
+                await h.delete()
+                await event.reply("Preview For [{}](tg://user?id={})[.](https://telegra.ph{})".format(event.sender.first_name, event.sender.id, media_urls[0]), link_preview=True, buttons=BUTTON)
+        elif input_str == "xt":
+            user_object = await tbot.get_entity(r_message.sender_id)
+            title_of_page = user_object.first_name # + " " + user_object.last_name
+            # apparently, all Users do not have last_name field
+            if optional_title:
+                title_of_page = optional_title
+            page_content = r_message.message
+            if r_message.media:
+                if page_content != "":
+                    title_of_page = page_content
+                downloaded_file_name = await tbot.download_media(
+                    r_message,
+                    TMP_DOWNLOAD_DIRECTORY
                 )
+                m_list = None
+                with open(downloaded_file_name, "rb") as fd:
+                    m_list = fd.readlines()
+                for m in m_list:
+                    page_content += m.decode("UTF-8") + "\n"
+                os.remove(downloaded_file_name)
+            page_content = page_content.replace("\n", "<br>")
+            response = telegraph.create_page(
+                title_of_page,
+                html_content=page_content
+            )
+            end = datetime.now()
+            ms = (end - start).seconds
+            # h = await event.reply("Downloaded in {} seconds.".format(ms))
+            # await h.delete()
+            # BUUTON = [[Button.url("Telegraph", f"https://telegra.ph/{response["path"]}")]]
+            await event.reply("Pasted to [Telegraph](https://telegra.ph/{}) in {} seconds.".format(response["path"], ms), link_preview=True)
+    else:
+        await event.reply("Reply to a message to get a permanent telegra.ph link.")
 
-                msg.edit_text(
-                    f"Successfully uploaded the Text to [telegra.ph](https://telegra.ph/{response['path']})",
-                    parse_mode="markdown"
-                )
-                
 
-        elif not message.reply_to_message:
-            msg.edit_text("Haha! I know this trick so tag any image/video/text")
+def resize_image(image):
+    im = Image.open(image)
+    im.save(image, "PNG")
 
 
-TELEGRAPH_HANDLER = CommandHandler("telegraph", telegraph, run_async=True)
+__help__ = """
+ ❍ /tm :Get Telegraph Link Of Replied Media
+ ❍ /txt :Get Telegraph Link of Replied Text
+"""
 
-dispatcher.add_handler(TELEGRAPH_HANDLER)
+__mod_name__ = "Telegraph"
