@@ -84,7 +84,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-SIESTA_IMG = "https://telegra.ph/file/6d3e3ef24f64fb6e35df0.jpg"
+SIESTA_IMG = "https://telegra.ph/file/b3d283f1040d5a2ce8aac.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @saint_foire \
@@ -831,7 +831,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""**Yes Darling ❤️, i am activated!**""",
+                f"""**Umm, Can i have ur Baby 👉👈 if u don't mind.....**[.](https://telegra.ph/file/b3d283f1040d5a2ce8aac.jpg)""",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
