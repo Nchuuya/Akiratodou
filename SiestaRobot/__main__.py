@@ -37,8 +37,8 @@ from SiestaRobot import (
 from SiestaRobot.modules import ALL_MODULES
 from SiestaRobot.modules.helper_funcs.chat_status import is_user_admin
 from SiestaRobot.modules.helper_funcs.misc import paginate_modules
-from SiestaRobot.script import MIKU_IMG
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+from SiestaRobot.script import MIKU_DISPACHER_PIC, PM_PHOTO, MIKU_N_IMG, TEXXT, MIKU_IMG 
 from telegram.error import (
     BadRequest,
     ChatMigrated,
@@ -201,8 +201,9 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                text=gs(chat.id, "pm_start_text").format(                    
+            update.effective_message.reply_photo(
+                PM_PHOTO,
+                caption=gs(chat.id, "pm_start_text").format(                    
                     escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
@@ -210,13 +211,22 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
+                            InlineKeyboardButton(text=gs(chat.id, "animechat_button"), callback_data="siesta_"),
+                        ],
+                        [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
+                            InlineKeyboardButton(text=gs(chat.id, "updates_button"), url="https://t.me/boa_updates"),
                         ],
                         [
                             InlineKeyboardButton(text=gs(chat.id, "support_button"), url="https://t.me/BoaHancock_Support"),
-                        
+                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url="https://t.me/zero-hisoka"),
                         ],
-   
+                        [
+                            InlineKeyboardButton(
+                                text=gs(chat.id, "xd_button"), url="t.me/BoaHancock_Robot?startgroup=new"),
+                        ]
+
+                        
                     ]
                 ),
                 parse_mode=ParseMode.MARKDOWN,
