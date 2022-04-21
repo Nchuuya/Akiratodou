@@ -38,7 +38,7 @@ from SiestaRobot.modules import ALL_MODULES
 from SiestaRobot.modules.helper_funcs.chat_status import is_user_admin
 from SiestaRobot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
-from SiestaRobot.script import MIKU_DISPACHER_PIC, PM_PHOTO, MIKU_N_IMG, TEXXT, MIKU_IMG 
+from SiestaRobot.script import GC, PM_PHOTO, MIKU_N_IMG, TEXXT, MIKU_IMG 
 from telegram.error import (
     BadRequest,
     ChatMigrated,
@@ -211,7 +211,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "animechat_button"), url="https://t.me/ahjin_chat"),
+                            
                             InlineKeyboardButton(
                                 text=gs(chat.id, "xd_button"), url="t.me/akiratodobot?startgroup=new"),
 
@@ -228,8 +228,9 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            text=gs(chat.id, "group_start_text").format(
+        update.effective_message.reply_photo(
+            GC,
+            caption=gs(chat.id, "group_start_text").format(
                 escape_markdown(uptime),
                 ),
 reply_markup=InlineKeyboardMarkup(
