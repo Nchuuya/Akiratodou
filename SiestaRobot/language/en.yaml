@@ -20,7 +20,7 @@ pm_start_text: |
   ✪ Hit /help to see my available commands.
    
 group_start_text: |
-  *Umm, Shoto san can i Have ur Baby 👉👈 cause i m working Perfectly [.](https://telegra.ph/file/4a800f8e58a8df4a72a40.jpg)
+  *Umm, Shoto san can i Have ur Baby 👉👈 cause i m working Perfectly
   *Started active since :* `{}`
 
 pm_about_text: |
@@ -65,7 +65,7 @@ pm_help_text: |
 pm_help_module_text: "Here is the help for the *{}* module :\n\n"
 
 # Group Help Text
-group_help_text: "Contact me in PM to get the list of possible commands."
+group_help_text: "Contact me in PM to get the list of possible commands."[.](https://telegra.ph/file/d9986b3e88fdadc021279.jpg)
 group_help_modules_text: "Contact me in PM to get help of *{}*"
 # Group Help Button
 group_help_button: "Help"
