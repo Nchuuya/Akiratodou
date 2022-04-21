@@ -84,7 +84,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-SIESTA_IMG = "https://telegra.ph/file/b3d283f1040d5a2ce8aac.jpg"
+SIESTA_IMG = "https://telegra.ph/file/d9986b3e88fdadc021279.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @saint_foire \
@@ -562,8 +562,9 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             moduls = module.capitalize()
-            update.effective_message.reply_text(
-                text=gs(chat.id, "group_help_modules_text").format(
+            update.effective_message.reply_photo(
+                SIESTA_IMG
+                caption=gs(chat.id, "group_help_modules_text").format(
                     escape_markdown(moduls),
                     ),
                 reply_markup=InlineKeyboardMarkup(
