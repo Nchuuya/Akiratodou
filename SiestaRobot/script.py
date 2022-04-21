@@ -30,4 +30,4 @@ MIKU_N_IMG = (
 
 PM_PHOTO = "https://telegra.ph/file/a319c4b912f2dfd24f17f.jpg"
 
-MIKU_DISPACHER_PIC = "https://telegra.ph/file/b3d283f1040d5a2ce8aac.jpg"
+GC = "https://telegra.ph/file/d9986b3e88fdadc021279.jpg"
