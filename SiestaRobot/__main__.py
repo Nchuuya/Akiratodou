@@ -228,16 +228,15 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_photo(
-            GC,
-            caption=gs(chat.id, "group_start_text").format(
+        update.effective_message.reply_text(
+            text=gs(chat.id, "group_start_text").format(
                 escape_markdown(uptime),
                 ),
 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "O W N E R", url=f"https://t.me//zero_hisoka"),
+                                "O•W•N•E•R", url=f"https://t.me//zero_hisoka"),
                             InlineKeyboardButton(
                                 "•𝙰𝙷𝙹𝙸𝙽•", url=f"https://t.me/ahjin_network")
                 
