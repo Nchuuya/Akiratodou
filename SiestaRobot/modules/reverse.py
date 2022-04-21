@@ -22,7 +22,7 @@ def grs(update: Update, context: CallbackContext):
                 name = result["output"]
                 link = result["similar"]
                 
-                msg.edit_text("Uploaded to google, fetching results...")
+                msg.edit_text("ara ara matte ...")
                 msg.edit_text(
                 text=f"{name}",
                 reply_markup=InlineKeyboardMarkup(
@@ -71,15 +71,15 @@ def grs(update: Update, context: CallbackContext):
     else:
         message.reply_text("Command should be used with replying to an image or url should given.")
 
-REVERSE_HANDLER = DisableAbleCommandHandler("grs", reverse, run_async=True)
-dispatcher.add_handler(REVERSE_HANDLER)
+GRS_HANDLER = DisableAbleCommandHandler("grs", grs, run_async=True)
+dispatcher.add_handler(GRS_HANDLER)
 
 __help__ = """
 Reverse search any image using google image search.
 Usage:
     - sending /reverse by replying to any image
     - /reverse https://sample.com/sample.jpg
-    - /grs wAifu or 
+    - /grs wAifu or Husbandro
 """
 
 __mod_name__ = "Reverse"
