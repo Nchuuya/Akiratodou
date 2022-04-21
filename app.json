@@ -31,7 +31,7 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": ""
+         "value": "5191978202:AAG9XO83aYutZp4tHqIy6clVsTBkLFJdLR4"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
@@ -51,7 +51,7 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "5191978202"
+         "value": "5293428505"
      },
 
       "STRING_SESSION": {
@@ -129,7 +129,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": ""
+         "value": "5394010695 5148631955 5083917315 1297082217 5191978202"
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
