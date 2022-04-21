@@ -50,7 +50,7 @@ COSPLAY_HANDLER = DisableAbleCommandHandler("cosplay", cosplay, run_async=True)
 WAIFU_HANDLER = DisableAbleCommandHandler("onepiece", onepiece, run_async=True)
 WYR_HANDLER = DisableAbleCommandHandler("wyr", wyr, run_async=True)
 TORD_HANDLER = DisableAbleCommandHandler("tord", tord, run_async=True)
-REELS_HANDLER = DisableAbleCommandHandler("tord", tord, run_async=True)
+REELS_HANDLER = DisableAbleCommandHandler("reels", reels, run_async=True)
 
 
 
