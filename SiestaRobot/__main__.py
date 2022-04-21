@@ -563,7 +563,7 @@ def get_help(update: Update, context: CallbackContext):
             module = args[1].lower()
             moduls = module.capitalize()
             update.effective_message.reply_photo(
-                SIESTA_IMG
+                SIESTA_IMG,
                 caption=gs(chat.id, "group_help_modules_text").format(
                     escape_markdown(moduls),
                     ),
