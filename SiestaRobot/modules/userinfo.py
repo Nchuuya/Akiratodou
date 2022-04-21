@@ -48,7 +48,7 @@ from SiestaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SiestaRobot.modules.helper_funcs.extraction import extract_user
 from SiestaRobot import telethn
 
-MIKU_IMG = "https://telegra.ph/file/e3be4035a03c7ecb6b24e.jpg"
+MIKU_IMG = "https://telegra.ph/file/d9986b3e88fdadc021279.jpg"
 
 def no_by_per(totalhp, percentage):
     """
@@ -316,10 +316,10 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is  ' My Husband'."
+        text += "\n\nThis person is  ' My Owner'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is 'My Sex Partner'."
+        text += "\n\nThis user is 'My Dev'."
         disaster_level_present = True
     elif user.id in DRAGONS:
         text += "\n\nThis person is 'My Boyfriend'."
@@ -469,7 +469,7 @@ def stats(update, context):
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/akira_updates)\n\n"
-            + "\n╘══「 by [Kazutora Hanemiya ♡](https://t.me/zero-hisoka) 」\n",
+            + "\n╘══「 by [Kazutora Hanemiya ♡](https://t.me/zero_hisoka) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -491,7 +491,7 @@ def stats(update, context):
                     )
                     + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/akira_updates)\n\n"
                 )
-                + "╘══「 by [Kazutora Hanemiya♡](https://t.me/zero-hisoka) 」\n"
+                + "╘══「 by [Kazutora Hanemiya♡](https://t.me/zero_hisoka) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
