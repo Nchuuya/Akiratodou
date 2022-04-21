@@ -145,3 +145,19 @@ WAIFU = (
    "https://telegra.ph/file/c476a1ad86ef6dc77c16c.jpg",
    "https://telegra.ph/file/b33c22cb82b14ad5c8e6f.jpg",
 )
+
+
+
+
+
+REELS = (
+   "https://telegra.ph/file/80404f5245a2c69520ad8.mp4",
+   "https://telegra.ph/file/a011c9f3dc5131aaf9016.mp4",
+   "https://telegra.ph/file/dfce15c447b116d3167fb.mp4",
+   "https://telegra.ph/file/9f2967807e306527904e5.mp4",
+   "https://telegra.ph/file/4f39a224d945a3ddea3e7.mp4",
+   "https://telegra.ph/file/bd5861dede7946283c567.mp4",
+   "https://telegra.ph/file/022e68d0059a3ee82a549.mp4",
+   "https://telegra.ph/file/4f42af401780fab1c7666.mp4",
+   "https://telegra.ph/file/dda9970fa9fee8171374c.mp4",
+   "
