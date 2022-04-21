@@ -51,12 +51,12 @@ async def hmm(yes):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
-    Miku = f"♡ **Hey [{yes.sender.first_name}](tg://user?id={yes.sender.id}), I'm Boa Hancock ♡**\n\n"
+    Miku = f"♡ **Hey [{yes.sender.first_name}](tg://user?id={yes.sender.id}), I'm Todou Akira ♡**\n\n"
     Miku += f"♡ **My Uptime** ~♪ `{uptime}`\n\n"
     Miku += f"♡ **Telethon Version** ~♪ `{version.__version__}`\n\n"
     Miku += f"♡ **Python Telegram Bot Version** ~♪ `{telegram.__version__}`\n\n"
     Miku += f"♡ **Pyrogram Version** ~♪ `{pyro}`\n\n"
-    Miku += f"♡ **My Master** ~♪ [Kazutora Hanemiya ♡](https://t.me/zero_hisoka)\n\n"
+    Miku += f"♡ **My Master** ~♪ [S L A D E ♡](https://t.me/simp_ly_naveen)\n\n"
     Miku += f"Thanks For Adding Me ♡"
     BUTTON = [[Button.url("Support Chat", "https://t.me/BoaHancock_Support"), Button.url("Updates Channel", "https://t.me/boa_updates")]]
     on = await borg.send_file(yes.chat_id, file=file2,caption=Miku, buttons=BUTTON)
