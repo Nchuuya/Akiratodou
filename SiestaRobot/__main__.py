@@ -236,7 +236,7 @@ reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "O•W•N•E•R", url=f"https://t.me//zero_hisoka"),
+                                "Owner", url=f"https://t.me//simp_ly_naveen"),
                             InlineKeyboardButton(
                                 "•𝙰𝙷𝙹𝙸𝙽•", url=f"https://t.me/ahjin_network")
                 
