@@ -1,6 +1,6 @@
 import html
 import random
-import SiestaRobot.modules.truth_and_dare_string as truth_and_dare_strin
+import SiestaRobot.modules.truth_and_dare_string as truth_and_dare_string
 import SiestaRobot.modules.game_strings as game_strings
 from SiestaRobot import dispatcher
 from telegram import ParseMode, Update, Bot
