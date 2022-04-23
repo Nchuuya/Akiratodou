@@ -238,7 +238,7 @@ reply_markup=InlineKeyboardMarkup(
                             InlineKeyboardButton(
                                 "Owner", url=f"https://t.me//simp_ly_naveen"),
                             InlineKeyboardButton(
-                                "•𝙰𝙷𝙹𝙸𝙽•", url=f"https://t.me/ahjin_network")
+                                "Updates", url=f"https://t.me/akira_updates")
                 
                         ],
                     ]
