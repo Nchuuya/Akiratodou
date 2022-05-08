@@ -10,17 +10,18 @@ set_chat_lang: "Great, using {} Language it is from now on!"
 # PM Text
 pm_start_text: |
   *Hey Darling, {} ♡*
-  ✪ I'm ʙᴏᴀ ʜᴀɴᴄᴏᴄᴋ ♡ here to manage your groups thanks to Using me !
+  ✪ I'm Akira Todo ♡ here to manage your groups thanks to Using me !
 
-  ➖➖➖➖➖♡➖➖♡➖➖➖➖➖➖
-  ✓• *Users:* `{}` *Chats:* `{}`
-  It Has Music too Yuuki 3.0 Blazing Fast Music ✨
-  ➖➖➖➖➖♡➖➖♡➖➖➖➖➖➖
+  ╔═══════•❃•❀•❃════════╗
+  ✓• *ᴜᴘᴛɪᴍᴇ:* {}
+  ╠════════════════════╣
+  ✓• {} *ᴜꜱᴇʀ, ᴀᴄʀᴏꜱꜱ* {} *ᴄʜᴀᴛꜱ.*
+  ╚═══════•❃•❀•❃════════╝
 
   ✪ Hit /help to see my available commands.
    
 group_start_text: |
-  *Umm, Shoto san can i Have ur Baby 👉👈 cause i m working Perfectly[...](https://telegra.ph/file/06973fb8348fe020fb3b9.mp4)
+  *Umm, Shoto san can i Have ur Baby 👉👈 cause i m working Perfectly*[💕](https://telegra.ph/file/06973fb8348fe020fb3b9.mp4)
   *Started active since :* `{}`
 
 pm_about_text: |
