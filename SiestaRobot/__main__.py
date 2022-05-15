@@ -2,6 +2,7 @@ import html
 import os
 import json
 import importlib
+import random
 import time
 import re
 import sys
@@ -202,7 +203,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                PM_PHOTO,
+                random.choice(MIKU_IMG),
                 caption=gs(chat.id, "pm_start_text").format(                    
                     escape_markdown(first_name),
                     escape_markdown(uptime),
@@ -228,8 +229,9 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            text=gs(chat.id, "group_start_text").format(
+        update.effective_message.reply_video(
+            PM_PHOTO,
+            caption=gs(chat.id, "group_start_text").format(
                 escape_markdown(uptime),
                 ),
 reply_markup=InlineKeyboardMarkup(
