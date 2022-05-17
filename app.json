@@ -86,7 +86,6 @@
       },
       "DATABASE_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
-         "value": "postgres://ncltdvlq:YopbfFrxb5YOal9sYSMnvCClPE4ypE7y@heffalump.db.elephantsql.com/ncltdvlq"
          "required": false
      },
      "IBM_WATSON_CRED_PASSWORD": {
