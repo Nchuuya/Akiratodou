@@ -212,25 +212,23 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            
-                            InlineKeyboardButton(
-                                text=gs(chat.id, "xd_button"), url="t.me/akiratodobot?startgroup=new"),
-                            
-
+                            InlineKeyboardButton(text=gs(chat.id, "owner_button"), url=https://t.me/simp_ly_naveen"),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "support_button"), url="t.me/akiratodosupport"),
+                            InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
+                            InlineKeyboardButton(text=gs(chat.id, "support_button"), url="https://t.me/akiratodosupport"),
                         ],
-                           
-
-                        
+                        [
+                            InlineKeyboardButton(
+                                text=gs(chat.id, "xd_button"), url="t.me/akiratodobot?startgroup=new"),
+                        ]
                     ]
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
     else:
-        update.effective_message.reply_video(
+        update.effective_message.reply_photo(
             PM_PHOTO,
             caption=gs(chat.id, "group_start_text").format(
                 escape_markdown(uptime),
