@@ -16,7 +16,7 @@
          "options": {
             "version": "12"
          },
-         "plan": "heroku-postgresql"
+        
       }
    ],
    "buildpacks": [
@@ -36,12 +36,12 @@
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": "8276637"
+         "value": "8714251"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": "c412d38a4ebcc2b32621a5c2be276d13"
+         "value": ""
       },    
       "SQLALCHEMY_DATABASE_URI": {
          "description": "Your postgres sql db, empty this field if you dont have one.",
@@ -51,13 +51,13 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "5293428505"
+         "value": "5302104643"
      },
 
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
          "required": true,
-         "value": "1BVtsOGgBuz7jlI1CG5dTIPD-b5cAjXLkL4iOxID4AL6ZtejBd3AoxWfed13D_SAM8KGy2_KrAFK3GQwTuGGPn9hAwRzvqkWmQW9zpJmJYK4BSA7yq0o_LcPc88nwVsQcaxEfF1qRa2db9aRGNTwVDL1D1fcmfirt5LbofgjNMcCmRKuseUXIqgKWCufQ9jhsyQ2YbbbnpZqmF_cIThbBSTnmN15F_Ok6HbLx8JA94JMiXKTpYuzZ5zfKvLWl7MeEkoHbdq9lpOjfGZLXNYT-OtA_lfDxmfG9kswmca5Krx2uJXAe6xeN_xdvFPOKBWCcORXtStEyQbUsx-gorIgw1kjQDAXWlkY=" 
+         "value": "1BVtsOIcBuxmgk_JKdKDUqzV_YKIXgyFvYojRiv2rGkxQzxKoiSn17Yqi0v78l2tUIbxd8xb-9rj-enGpHScjr9RBkRWSh2udJDsfNUMGyaamlHIoitglpu0wE35VwTwWmdGj5vhY57p3rg7DRg6xhlc5h1VeOSBPSnJ7xvHqvWXds9vyNl-vA7CFLt9BD_9ljYgHXuBYyYZt2CxFmhxU_24RNekLssNV1euKR677p9VbLn2EivOPHwnzC4ldKzxzaO5pVbkWtdogSPg-FCWQrZcpU6UQl_Vt_XrwgN5gJBD32vT5Tp1lsQ2nc0XfdhrBViYRLwrJRgS1cDrFyClBx9-Y4kvB5Wg=" 
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
@@ -91,8 +91,9 @@
          "required": true,
          "value": "mongodb+srv://zerohisoka:kumar123@cluster0.8sg2a.mongodb.net/Cluster0?retryWrites=true&w=majority"
       },
-      "IBM_WATSON_CRED_URL": {
+      "DATABASE_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
+         "value": "postgres://ncltdvlq:YopbfFrxb5YOal9sYSMnvCClPE4ypE7y@heffalump.db.elephantsql.com/ncltdvlq"
          "required": false
      },
      "IBM_WATSON_CRED_PASSWORD": {
@@ -129,7 +130,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": "5394010695 5148631955 5083917315 1297082217 5191978202"
+         "value": "5394010695 5394536520 5148631955 5083917315 1297082217 5191978202"
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
