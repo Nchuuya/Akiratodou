@@ -203,7 +203,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                random.choice(MIKU_IMG),
+                PM_PHOTO,
                 caption=gs(chat.id, "pm_start_text").format(                    
                     escape_markdown(first_name),
                     escape_markdown(uptime),
@@ -215,6 +215,9 @@ def start(update: Update, context: CallbackContext):
                             
                             InlineKeyboardButton(
                                 text=gs(chat.id, "xd_button"), url="t.me/akiratodobot?startgroup=new"),
+                            InlineKeyboardButton(
+                                text=gs(chat.id, "help_button"), url=t.me/akiratodobot?start=help"),
+
 
                         ],
                         [
