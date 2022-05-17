@@ -243,7 +243,7 @@ reply_markup=InlineKeyboardMarkup(
                             InlineKeyboardButton(
                                 "Owner", url=f"https://t.me//simp_ly_naveen"),
                             InlineKeyboardButton(
-                                "Updates", url=f"https://t.me/akira_updates")
+                                "Updates", url=f"https://t.me/akiraXupdates")
                 
                         ],
                     ]
